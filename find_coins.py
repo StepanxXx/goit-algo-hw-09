@@ -37,7 +37,7 @@ def find_min_coins(amount: int, coins: list[int]) -> dict[int, int]:
 
     for coin in coins:
         for i in range(coin, amount + 1):
-            if min_coins[i - coin] + 1 < min_coins[i]:
+            if i - coin >= 0 and min_coins[i - coin] + 1 < min_coins[i]:
                 min_coins[i] = min_coins[i - coin] + 1
                 coin_used[i] = coin
 
